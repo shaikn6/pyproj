@@ -1223,7 +1223,7 @@ class Transformer:
         self,
         version: WktVersion | str = WktVersion.WKT2_2019,
         pretty: bool = False,
-    ) -> str:
+    ) -> str | None:
         """
         Convert the projection to a WKT string.
 
@@ -1246,7 +1246,7 @@ class Transformer:
 
         Returns
         -------
-        str:
+        str | None:
             The WKT string, or None if the transformer does not represent
             a single coordinate operation (see note below).
 
@@ -1262,7 +1262,7 @@ class Transformer:
         """
         return self._transformer.to_wkt(version=version, pretty=pretty)
 
-    def to_json(self, pretty: bool = False, indentation: int = 2) -> str:
+    def to_json(self, pretty: bool = False, indentation: int = 2) -> str | None:
         """
         Convert the projection to a JSON string.
 
@@ -1277,7 +1277,7 @@ class Transformer:
 
         Returns
         -------
-        str:
+        str | None:
             The JSON string, or None if the transformer does not represent
             a single coordinate operation (see note below).
 
